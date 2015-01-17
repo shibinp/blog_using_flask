@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<body>
+
+
+
+
+
+<center>
+<br/>
+<br/>
+<br/>
+<img src="static/welcome.jpg">
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<h1>PLEASE LOGIN</h1>
+<form action=" " method="post">
+username<input type='text' placeholder='Username' name='username' value='{{request.form.username}}'>
+Password<input type='password' placeholder='Password' name='password' value='{{request.form.password}}'></br>
+<br>
+<input class='btn btn-default' type=submit value=login>
+</form>
+<p align=right><input type=button value="guest view" onclick="load()"></p>
+<script>
+function load(){
+document.location.href="http://127.0.0.1:5000/guest"}
+</script>
+</center>
+</body>
+{% if error %}
+	<p class="error"><strong>incorrect:</strong>{{error}}</p>
+	{% endif %}
+	{% for message in get_flashed_messages() %}
+		{{message}}
+	{% endfor %}
+
+{% endblock %}

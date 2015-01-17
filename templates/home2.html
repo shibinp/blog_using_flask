@@ -1,0 +1,12 @@
+{% extends "base.html"%}
+{% block content %}
+<h1>RECENT POSTS</h1><br>
+{% for post in posts %}
+<big><u><strong>{{post.title}} </strong></u></big>
+<p>{{post.comment}}</p>
+<p><textarea name ="comment" placeholder="enter comment here..." rows="5" cols="30"></textarea></P>
+<input type=submit value=POST name=post>
+</script>
+{% endfor %}
+<a href="http://127.0.0.1:5000/about">about us</a>
+{% endblock %}

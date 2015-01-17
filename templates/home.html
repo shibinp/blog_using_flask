@@ -1,0 +1,26 @@
+{% extends "base.html"%}
+{% block content %}
+<h1>RECENT POSTS</h1><br>
+{% for post in posts %}
+
+<big><u><strong>{{post.title}} </strong></u></big>
+<p>{{post.comment}}</p>
+<form action= " " method ="post">
+<p>comment here </p>
+<p><textarea name="comment" placeholder="enter...." rows="5" cols="30"></textarea></p>
+<input type=submit value=POST name=post>
+</form>
+{% endfor %}
+<p>___________________________________________________________________________________________</p>
+<p>New post....</p>
+<p>TITTLE</p>
+<form action =" " method="post">
+<input type=text placeholder=title name=title>
+<p>COMMENT</p>
+<p><textarea name="comment" placeholder="enter content..." rows="10" cols="60"></textarea></p>
+<input type=submit value=POST name=post>
+
+</form>
+<p align=right><a href="http://127.0.0.1:5000/">logout</a></p>
+
+{% endblock %}
